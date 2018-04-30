@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>7</x>
+      <y>14</y>
+      <w>266</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Login
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>35</x>
+      <y>42</y>
+      <w>196</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Enter login: /login/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>35</x>
+      <y>84</y>
+      <w>196</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Enter password: /password/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>406</x>
+      <y>266</y>
+      <w>371</w>
+      <h>217</h>
+    </coordinates>
+    <panel_attributes>Doctor choosing
+-</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>567</x>
+      <y>294</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Doctor - checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>567</x>
+      <y>336</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Doctor - checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>567</x>
+      <y>378</y>
+      <w>91</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Doctor - checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>7</x>
+      <y>273</y>
+      <w>322</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Search result 
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>28</x>
+      <y>294</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>28</x>
+      <y>336</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>28</x>
+      <y>371</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>182</x>
+      <y>301</y>
+      <w>112</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Apply
+/btn-&gt; Home/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>420</x>
+      <y>308</y>
+      <w>140</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Go to clinic
+/btn-&gt; Search Result window/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>91</x>
+      <y>119</y>
+      <w>91</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Login
+/btn-&gt; Home window/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>63</x>
+      <y>182</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Dialog window
+/warn if incorrect input data/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>525</x>
+      <y>434</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Dialog window
+/warn if no one doctor selected/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>168</x>
+      <y>336</y>
+      <w>147</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Cancel
+/btn-&gt; Doctor choosing/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>70</x>
+      <y>441</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Dialog window
+/warn if no one doctor selected/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>672</x>
+      <y>406</y>
+      <w>70</w>
+      <h>21</h>
+    </coordinates>
+    <panel_attributes>paging</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>336</x>
+      <y>14</y>
+      <w>266</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Home
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>413</x>
+      <y>63</y>
+      <w>119</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>View my queue
+/btn-&gt; My queue window/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>392</x>
+      <y>133</y>
+      <w>154</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>Create queue
+/btn-&gt; Doctor Choosing window/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>658</x>
+      <y>7</y>
+      <w>266</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>My queue
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>763</x>
+      <y>35</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>763</x>
+      <y>70</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>763</x>
+      <y>105</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>763</x>
+      <y>140</y>
+      <w>119</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Doctor - time- checkbox</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>665</x>
+      <y>35</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Home
+/btn-&gt; Home/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>665</x>
+      <y>77</y>
+      <w>70</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Edit
+/btn-&gt; Home/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>714</x>
+      <y>175</y>
+      <w>154</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>Dialog window
+/warn if no one doctor selected/</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

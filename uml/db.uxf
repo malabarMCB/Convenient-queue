@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>250</y>
+      <w>250</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>User
+--
++ id: int &lt;&lt;pk&gt;&gt;
++ login: string &lt;unique&gt;&gt;
++ password: string
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>530</x>
+      <y>110</y>
+      <w>300</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>Doctor
+--
++ id: int &lt;&lt;pk&gt;&gt;
++ name: string
++ surname: string
++ specialization: string
++ age: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>200</y>
+      <w>250</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>DoctorVisit
+--
++ id: int &lt;&lt;pk&gt;&gt;
++ userId: int
++ doctorId: int
++ time: DateTime</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>160</y>
+      <w>230</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>210.0;10.0;90.0;10.0;90.0;80.0;10.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>290</y>
+      <w>290</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=0..*</panel_attributes>
+    <additional_attributes>270.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>50</x>
+      <y>30</y>
+      <w>250</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>DoctorVisitDetail
+--
++ id: int &lt;&lt;pk&gt;&gt;
++ doctorId: int &lt;&lt;unique&gt;&gt;
++ avgVisitTime: TimeSpan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>100</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1</panel_attributes>
+    <additional_attributes>240.0;40.0;90.0;40.0;90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

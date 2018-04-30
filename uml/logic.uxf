@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>896</x>
+      <y>56</y>
+      <w>119</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;VO&gt;&gt;
+LoginRequest
+--
++ login: string
++ password: string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>686</x>
+      <y>140</y>
+      <w>154</w>
+      <h>49</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IUserRepository
+--
++ GetUserId(LoginRequest): int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>70</x>
+      <y>126</y>
+      <w>203</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>LoginService
+bg=green
+--
++ Login(LoginRequest): int // user id</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>147</y>
+      <w>434</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
+- userRepository</panel_attributes>
+    <additional_attributes>10.0;20.0;600.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>63</y>
+      <w>644</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>900.0;10.0;450.0;10.0;450.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>833</x>
+      <y>77</y>
+      <w>77</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;10.0;60.0;10.0;60.0;120.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>546</x>
+      <y>196</y>
+      <w>154</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Exception&gt;&gt;
+InvalidLoginRequestException</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>175</y>
+      <w>294</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>400.0;60.0;380.0;60.0;380.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>231</y>
+      <w>133</w>
+      <h>42</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;static&gt;&gt;
+Session
+--
++ userId: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>154</x>
+      <y>315</y>
+      <w>385</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;&gt;
+IDoctorRepository
+bg=green
+--
++ GetDoctors(): List&lt;Doctor&gt;
++ CalculateDoctorsVisitPlan(userId: int, List&lt;Doctors&gt;): List&lt;DoctorVisit&gt;
++ AddDoctorVisitPlan(userId: int, List&lt;DoctorVisit&gt;)
++ GetDoctorVisitPlan(userId: int)
++ RemoveFromVisitPlan(planIds: List&lt;int&gt;)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>245</y>
+      <w>126</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;VO&gt;&gt;
+Doctor
+--
++ id: int
++ name: string
++ surname: string
++ specialization: string
++ age: int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>301</y>
+      <w>238</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>320.0;10.0;270.0;10.0;270.0;90.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>266</x>
+      <y>189</y>
+      <w>105</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0;70.0;70.0;130.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>595</x>
+      <y>455</y>
+      <w>119</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;VO&gt;&gt;
+DoctorVisit
+--
++ visitTime: DateTime
++ isNew: bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>707</x>
+      <y>315</y>
+      <w>77</w>
+      <h>196</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=0..*
+m2=1
++ doctor</panel_attributes>
+    <additional_attributes>10.0;250.0;40.0;250.0;40.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>532</x>
+      <y>399</y>
+      <w>77</w>
+      <h>84</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>90.0;100.0;30.0;100.0;30.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
