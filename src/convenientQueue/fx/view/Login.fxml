@@ -1,14 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="convenientQueue.fx.controller.LoginController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.text.Text?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="convenientQueue.fx.controller.LoginController"
+          prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+    <Label text="Login"  GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField fx:id="login" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+    <Label text="Password"  GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField fx:id="password" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+    <HBox spacing="10" alignment="bottom_left"
+          GridPane.columnIndex="2" GridPane.rowIndex="3">
+        <Button  text="Add"
+                 onAction="#login"/>
+    </HBox>
+
+    <ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="4">
+        <Text wrappingWidth="400" fx:id="dialogText"/>
+    </ScrollPane>
+
+</GridPane>
