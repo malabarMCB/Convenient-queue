@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>7</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>896</x>
-      <y>56</y>
-      <w>119</w>
-      <h>63</h>
+      <x>1062</x>
+      <y>0</y>
+      <w>153</w>
+      <h>81</h>
     </coordinates>
     <panel_attributes>&lt;&lt;VO&gt;&gt;
 LoginRequest
@@ -19,10 +19,10 @@ LoginRequest
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>686</x>
-      <y>140</y>
-      <w>154</w>
-      <h>49</h>
+      <x>792</x>
+      <y>108</y>
+      <w>198</w>
+      <h>63</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 IUserRepository
@@ -33,10 +33,10 @@ IUserRepository
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>70</x>
-      <y>126</y>
-      <w>203</w>
-      <h>77</h>
+      <x>0</x>
+      <y>90</y>
+      <w>261</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>LoginService
 bg=green
@@ -47,10 +47,10 @@ bg=green
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>147</y>
-      <w>434</w>
-      <h>35</h>
+      <x>252</x>
+      <y>117</y>
+      <w>558</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -61,10 +61,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>63</y>
-      <w>644</w>
-      <h>98</h>
+      <x>252</x>
+      <y>9</y>
+      <w>828</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>900.0;10.0;450.0;10.0;450.0;120.0;10.0;120.0</additional_attributes>
@@ -72,10 +72,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>833</x>
-      <y>77</y>
-      <w>77</w>
-      <h>98</h>
+      <x>981</x>
+      <y>27</y>
+      <w>99</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>90.0;10.0;60.0;10.0;60.0;120.0;10.0;120.0</additional_attributes>
@@ -83,10 +83,10 @@ m2=1
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>546</x>
-      <y>196</y>
-      <w>154</w>
-      <h>35</h>
+      <x>612</x>
+      <y>180</y>
+      <w>198</w>
+      <h>45</h>
     </coordinates>
     <panel_attributes>&lt;&lt;Exception&gt;&gt;
 InvalidLoginRequestException</panel_attributes>
@@ -95,10 +95,10 @@ InvalidLoginRequestException</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>175</y>
-      <w>294</w>
-      <h>56</h>
+      <x>252</x>
+      <y>153</y>
+      <w>378</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>400.0;60.0;380.0;60.0;380.0;10.0;10.0;10.0</additional_attributes>
@@ -106,10 +106,10 @@ InvalidLoginRequestException</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>357</x>
-      <y>231</y>
-      <w>133</w>
-      <h>42</h>
+      <x>369</x>
+      <y>225</y>
+      <w>171</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>&lt;&lt;static&gt;&gt;
 Session
@@ -120,29 +120,30 @@ Session
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>154</x>
-      <y>315</y>
-      <w>385</w>
-      <h>112</h>
+      <x>108</x>
+      <y>333</y>
+      <w>495</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>&lt;&lt;interface&gt;&gt;
 IDoctorRepository
 bg=green
 --
-+ GetDoctors(): List&lt;Doctor&gt;
-+ CalculateDoctorsVisitPlan(userId: int, List&lt;Doctors&gt;): List&lt;DoctorVisit&gt;
-+ AddDoctorVisitPlan(userId: int, List&lt;DoctorVisit&gt;)
-+ GetDoctorVisitPlan(userId: int)
-+ RemoveFromVisitPlan(planIds: List&lt;int&gt;)</panel_attributes>
++ GetDoctors(pageNum: int, itemsPerPage: int): List&lt;Doctor&gt;
++ GetDoctorsCount(): int
++ CalculateDoctorVisits(userId: int, doctorIds: List&lt;int&gt;)
++ GetDoctorVisits(userId: int, pageNum: int, itemsPerPage: int): List&lt;DoctorVisit&gt;
++ GetDoctorVisitsCount(userId: int)
++ RemoveDoctorVisits(visitIds: List&lt;int&gt;)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>756</x>
-      <y>245</y>
-      <w>126</w>
-      <h>98</h>
+      <x>882</x>
+      <y>243</y>
+      <w>162</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>&lt;&lt;VO&gt;&gt;
 Doctor
@@ -157,10 +158,10 @@ Doctor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>532</x>
-      <y>301</y>
-      <w>238</w>
-      <h>77</h>
+      <x>594</x>
+      <y>315</y>
+      <w>306</w>
+      <h>99</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>320.0;10.0;270.0;10.0;270.0;90.0;10.0;90.0</additional_attributes>
@@ -168,10 +169,10 @@ Doctor
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>266</x>
-      <y>189</y>
-      <w>105</w>
-      <h>70</h>
+      <x>252</x>
+      <y>171</y>
+      <w>135</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -181,10 +182,10 @@ m2=1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>595</x>
-      <y>455</y>
-      <w>119</w>
-      <h>56</h>
+      <x>675</x>
+      <y>513</y>
+      <w>153</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>&lt;&lt;VO&gt;&gt;
 DoctorVisit
@@ -196,10 +197,10 @@ DoctorVisit
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>707</x>
-      <y>315</y>
-      <w>77</w>
-      <h>196</h>
+      <x>819</x>
+      <y>333</y>
+      <w>99</w>
+      <h>252</h>
     </coordinates>
     <panel_attributes>lt=-
 m1=0..*
@@ -210,10 +211,10 @@ m2=1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>532</x>
-      <y>399</y>
-      <w>77</w>
-      <h>84</h>
+      <x>594</x>
+      <y>441</y>
+      <w>99</w>
+      <h>108</h>
     </coordinates>
     <panel_attributes>lt=.</panel_attributes>
     <additional_attributes>90.0;100.0;30.0;100.0;30.0;10.0;10.0;10.0</additional_attributes>
