@@ -6,9 +6,10 @@ import convenientQueue.logic.model.DoctorVisit;
 import java.util.List;
 
 public interface IDoctorRepository {
-    List<Doctor> GetDoctors();
-    List<DoctorVisit> CalculateDoctorVisits();
-    int AddDoctorVisits(int userId, List<DoctorVisit> visits);
-    List<DoctorVisit> GetDoctorVisits(int userId);
-    void RemoveVisits(List<Integer> visitIds );
+    List<Doctor> getDoctors(int pageNum, int itemsPerPage);
+    int getDoctorsCount();
+    void calculateDoctorVisits(int userId, List<Integer> doctorIds);
+    List<DoctorVisit> getDoctorVisits(int userId, int pageNum, int itemsPerPage);
+    int getDoctorsVisitsCount(int userId);
+    void removeDoctorsVisits(List<Integer> visitIds);
 }

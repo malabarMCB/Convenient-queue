@@ -2,7 +2,9 @@ package convenientQueue.fx.windowFactory;
 
 import convenientQueue.fx.controller.HomeController;
 import convenientQueue.fx.controller.LoginController;
+import convenientQueue.fx.controller.MyQueueController;
 import convenientQueue.logic.LoginService;
+import convenientQueue.logic.repository.IDoctorRepository;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -14,9 +16,11 @@ public class WindowFactory {
     private final String  BASE_PATH = "../view/";
 
     private LoginService loginService;
+    private IDoctorRepository doctorRepository;
 
-    public WindowFactory(LoginService loginService){
+    public WindowFactory(LoginService loginService, IDoctorRepository doctorRepository){
         this.loginService = loginService;
+        this.doctorRepository = doctorRepository;
     }
 
     public void createLoginWindow(){
@@ -31,6 +35,11 @@ public class WindowFactory {
         } );
     }
 
+    public void createMyQueueWindow(){
+        setUpWindow(BASE_PATH+"MyQueue.fxml","MyQueue",controller -> {
+            ((MyQueueController)controller).inject(doctorRepository,this);
+        } );
+    }
 
     private void setUpWindow(String resoursePath, String sceneTitle, ControllerInjectionFunctionalInterface injection){
         FXMLLoader loader = new FXMLLoader(getClass().getResource(resoursePath));
