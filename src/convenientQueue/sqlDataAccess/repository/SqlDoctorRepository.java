@@ -81,6 +81,14 @@ public class SqlDoctorRepository implements IDoctorRepository {
 
     @Override
     public void removeDoctorsVisits(List<Integer> visitIds) {
-
+        StringBuilder args = new StringBuilder();
+        args.append(" ");
+        visitIds.forEach(id-> args.append(" ").append(id).append(" "));
+        args.append(" ");
+        SqlQueryExecutor.executePreparedStatement(connectionString, "RemoveDoctorsVisits (?)",
+                (preparedStatement -> {
+                    preparedStatement.setString(1, args.toString());
+                    preparedStatement.executeUpdate();
+                }));
     }
 }

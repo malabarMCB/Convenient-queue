@@ -43,6 +43,25 @@ end
 
 drop proc GetDoctorsVisits
 
-exec GetDoctorsVisits 1, 1, 4
+exec GetDoctorsVisits 1, 0, 4
+go
+---
+
+create proc RemoveDoctorsVisits
+	@visitIds nvarchar(max)
+as
+begin
+	delete from DoctorVisit
+	where DoctorVisit.Id in
+	(
+		select Id
+		from DoctorVisit
+		where @visitIds like '% '+cast(Id as nvarchar(max))+' %'
+	)
+end
+
+drop proc GetDoctorsVisits
+
+exec RemoveDoctorsVisits ' 1 4 3 '
 go
 ---
