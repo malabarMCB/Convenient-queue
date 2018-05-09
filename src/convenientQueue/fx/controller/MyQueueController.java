@@ -4,13 +4,16 @@ import convenientQueue.fx.windowFactory.WindowFactory;
 import convenientQueue.logic.Session;
 import convenientQueue.logic.model.DoctorVisit;
 import convenientQueue.logic.repository.IDoctorRepository;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 
-import java.awt.event.ActionEvent;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -32,16 +35,17 @@ public class MyQueueController {
     private int currentPage;
     private List<Integer> visitsToRemove;
     private Scene scene;
+    private DateFormat timeFormat;
 
     public void inject(IDoctorRepository doctorRepository, WindowFactory windowFactory){
         this.doctorRepository = doctorRepository;
         this.windowFactory = windowFactory;
     }
 
-    @FXML
-    private void initialize(){
+    public void init(){
         scene = gridPane.getScene();
         visitsToRemove = new ArrayList<>();
+        timeFormat = new SimpleDateFormat("MM/dd/yyyy HH:mm");
         currentPage = 0;
         initializeView();
     }
@@ -57,30 +61,47 @@ public class MyQueueController {
         windowFactory.createHomeWindow();
     }
 
+
     private void initializeView(){
         List<DoctorVisit> visits = doctorRepository.getDoctorVisits(Session.USER_ID, currentPage, ITEMS_PER_PAGE);
         for(int i=0; i<ITEMS_PER_PAGE; i++){
             Label name = (Label) scene.lookup("#name_"+i);
             Label surname = (Label) scene.lookup("#surname_"+i);
             Label specialization = (Label) scene.lookup("#specialzation_"+i);
-            Label age = (Label) scene.lookup("#age_"+i);
+            Label time = (Label) scene.lookup("#visit_"+i);
+            CheckBox checkbox = (CheckBox) scene.lookup("#ckeckbox_"+i);
 
             if(i< visits.size()){
                 DoctorVisit currentVisit = visits.get(i);
+
                 name.setText(currentVisit.getDoctor().getName());
                 surname.setText(currentVisit.getDoctor().getSurname());
                 specialization.setText(currentVisit.getDoctor().getSpecialization());
-                age.setText(Integer.toString(currentVisit.getDoctor().getAge()));
+                time.setText(timeFormat.format(currentVisit.getDate()));
+
+                checkbox.setDisable(false);
+                checkbox.setOnAction(e-> updateRemoveList(currentVisit.getId()));
             }
             else{
                 name.setText("");
                 surname.setText("");
                 specialization.setText("");
-                age.setText("");
+                time.setText("");
+                checkbox.setDisable(true);
             }
         }
         updateEditBtn();
         updatePaging();
+    }
+
+    private void updateRemoveList(int visitId){
+        if(visitsToRemove.contains(visitId)){
+            visitsToRemove.remove(Integer.valueOf(visitId));
+        }
+        else{
+            visitsToRemove.add(visitId);
+        }
+        updateEditBtn();
     }
 
     private void updateEditBtn(){

@@ -17,8 +17,10 @@ public class WindowFactory {
 
     private LoginService loginService;
     private IDoctorRepository doctorRepository;
+    private Stage stage;
 
-    public WindowFactory(LoginService loginService, IDoctorRepository doctorRepository){
+    public WindowFactory(Stage stage, LoginService loginService, IDoctorRepository doctorRepository){
+        this.stage = stage;
         this.loginService = loginService;
         this.doctorRepository = doctorRepository;
     }
@@ -37,7 +39,9 @@ public class WindowFactory {
 
     public void createMyQueueWindow(){
         setUpWindow(BASE_PATH+"MyQueue.fxml","MyQueue",controller -> {
-            ((MyQueueController)controller).inject(doctorRepository,this);
+            MyQueueController myQueueController = (MyQueueController) controller;
+            myQueueController.inject(doctorRepository,this);
+            myQueueController.init();
         } );
     }
 
@@ -50,7 +54,6 @@ public class WindowFactory {
             e.printStackTrace();
         }
         Scene scene= new Scene(root);
-        Stage stage= new Stage();
         stage.setTitle(sceneTitle);
         stage.setScene(scene);
 

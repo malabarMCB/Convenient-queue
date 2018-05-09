@@ -13,7 +13,7 @@ public class LoginService {
 
     public void Login(LoginRequest loginRequest) throws InvalidLoginRequestException{
         int userId = userRepository.GetUserId(loginRequest);
-        if(userId == -1)
+        if(userId == 0)
             throw new InvalidLoginRequestException();
         Session.USER_ID = userId;
     }

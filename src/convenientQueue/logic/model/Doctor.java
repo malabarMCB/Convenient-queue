@@ -5,7 +5,6 @@ public class Doctor {
     private String name;
     private String surname;
     private String specialization;
-    private int age;
 
     public int getId() {
         return id;
@@ -37,13 +36,5 @@ public class Doctor {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
     }
 }

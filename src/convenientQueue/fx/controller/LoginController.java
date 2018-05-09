@@ -23,7 +23,14 @@ public class LoginController {
         this.windowFactory = windowFactory;
     }
 
-    public void login(ActionEvent actionEvent) {
+    @FXML
+    private void initialize(){
+        login.setText("test1");
+        password.setText("111");
+    }
+
+    @FXML
+    private void login(ActionEvent actionEvent) {
         LoginRequest loginRequest = configureLoginRequest();
         try {
             loginService.Login(loginRequest);
