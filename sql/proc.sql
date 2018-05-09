@@ -32,16 +32,17 @@ create proc GetDoctorsVisits
 	@userId int, @pageNum int, @itemsPerPage int
 as
 begin
-	select *
+	select DoctorVisit.Id, Doctor.Id as DoctorId,Doctor.Name, Doctor.Surname, DoctorVisit.Time, Doctor.Specialization
 	from DoctorVisit
+	join Doctor on Doctor.Id = DoctorId
 	where UserId = @userId
-	order by Id
+	order by DoctorVisit.Id
 	offset @pageNum*@itemsPerPage rows
 	fetch next @itemsPerPage rows only
 end
 
 drop proc GetDoctorsVisits
 
-exec GetDoctorsVisits 1, 0, 4
+exec GetDoctorsVisits 1, 1, 4
 go
 ---
