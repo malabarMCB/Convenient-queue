@@ -1,3 +1,4 @@
+
 create proc GetUserId
 	@login nvarchar(255), @password nvarchar(255)
 as
@@ -65,3 +66,31 @@ drop proc GetDoctorsVisits
 exec RemoveDoctorsVisits ' 1 4 3 '
 go
 ---
+
+create proc GetDoctorsCount
+as
+begin
+	select count(*) as [Count]
+	from Doctor
+end
+
+drop proc GetDoctorsCount
+
+exec GetDoctorsCount
+go
+--
+
+create proc GetDoctors
+	@pageNum int, @itemsPerPage int
+as
+begin
+	select *
+	from Doctor
+	order by Id
+	offset @pageNum*@itemsPerPage rows
+	fetch next @itemsPerPage rows only
+end
+
+drop proc GetDoctors
+
+exec GetDoctors 0,4

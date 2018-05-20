@@ -21,12 +21,39 @@ public class SqlDoctorRepository implements IDoctorRepository {
 
     @Override
     public List<Doctor> getDoctors(int pageNum, int itemsPerPage) {
-        return null;
+        List<Doctor> result = new ArrayList<>();
+        SqlQueryExecutor.executePreparedStatement(connectionString, "GetDoctors (?, ?)",
+                (preparedStatement)-> {
+                    preparedStatement.setInt(1, pageNum);
+                    preparedStatement.setInt(2, itemsPerPage);
+                    ResultSet resultSet = preparedStatement.executeQuery();
+
+                    while (resultSet.next()){
+                        Doctor doctor = new Doctor();
+
+                        doctor.setId(resultSet.getInt("Id"));
+                        doctor.setName(resultSet.getString("Name"));
+                        doctor.setSurname(resultSet.getString("Surname"));
+                        doctor.setSpecialization(resultSet.getString("Specialization"));
+
+                        result.add(doctor);
+                    }
+                });
+
+        return result;
     }
 
     @Override
     public int getDoctorsCount() {
-        return 0;
+        AtomicInteger result = new AtomicInteger();
+        SqlQueryExecutor.executePreparedStatement(connectionString, "GetDoctorsCount",
+                (preparedStatement)-> {
+                    ResultSet resultSet = preparedStatement.executeQuery();
+                    if(resultSet.next())
+                        result.set(resultSet.getInt(1));
+                });
+
+        return result.get();
     }
 
     @Override
