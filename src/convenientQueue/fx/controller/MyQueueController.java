@@ -79,7 +79,8 @@ public class MyQueueController {
                 specialization.setText(currentVisit.getDoctor().getSpecialization());
                 time.setText(timeFormat.format(currentVisit.getDate()));
 
-                checkbox.setDisable(false);
+                checkbox.setVisible(true);
+                checkbox.setSelected(visitsToRemove.contains(currentVisit.getId()));
                 checkbox.setOnAction(e-> updateRemoveList(currentVisit.getId()));
             }
             else{
@@ -87,7 +88,7 @@ public class MyQueueController {
                 surname.setText("");
                 specialization.setText("");
                 time.setText("");
-                checkbox.setDisable(true);
+                checkbox.setVisible(false);
             }
         }
         updateEditBtn();
