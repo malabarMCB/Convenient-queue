@@ -18,5 +18,6 @@ public class HomeController {
 
     @FXML
     private void createQueue(ActionEvent actionEvent) {
+        windowFactory.createCreateQueueWindow();
     }
 }

@@ -1,8 +1,6 @@
 package convenientQueue.fx.windowFactory;
 
-import convenientQueue.fx.controller.HomeController;
-import convenientQueue.fx.controller.LoginController;
-import convenientQueue.fx.controller.MyQueueController;
+import convenientQueue.fx.controller.*;
 import convenientQueue.logic.LoginService;
 import convenientQueue.logic.repository.IDoctorRepository;
 import javafx.fxml.FXMLLoader;
@@ -40,6 +38,14 @@ public class WindowFactory {
     public void createMyQueueWindow(){
         setUpWindow(BASE_PATH+"MyQueue.fxml","MyQueue",controller -> {
             MyQueueController myQueueController = (MyQueueController) controller;
+            myQueueController.inject(doctorRepository,this);
+            myQueueController.init();
+        } );
+    }
+
+    public void createCreateQueueWindow(){
+        setUpWindow(BASE_PATH+"CreateQueue.fxml","CreateQueue",controller -> {
+            CreateQueueController myQueueController = (CreateQueueController) controller;
             myQueueController.inject(doctorRepository,this);
             myQueueController.init();
         } );

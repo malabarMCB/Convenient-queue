@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="convenientQueue.fx.controller.CreateQueueController"
-            prefHeight="400.0" prefWidth="600.0">
+<?import javafx.scene.text.Text?>
+<GridPane fx:id="gridPane" alignment="CENTER" xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="convenientQueue.fx.controller.CreateQueueController"
+          prefHeight="400.0" prefWidth="600.0">
 
-</AnchorPane>
+    <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button onAction="#apply" text="Go to clinic"/>
+    </HBox>
+
+    <Label text="Name" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Label text="Surname" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    <Label text="Specialization" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+    <Label text="Choose" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
+
+    <Label fx:id="name_0" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Label fx:id="surname_0" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <Label fx:id="specialzation_0" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="ckeckbox_0" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
+
+    <Label fx:id="name_1" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <Label fx:id="surname_1" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <Label fx:id="specialzation_1" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="ckeckbox_1" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
+
+    <Label fx:id="name_2" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <Label fx:id="surname_2" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <Label fx:id="specialzation_2" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <CheckBox fx:id="ckeckbox_2" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
+
+    <Label fx:id="name_3" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+    <Label fx:id="surname_3" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+    <Label fx:id="specialzation_3" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+    <CheckBox fx:id="ckeckbox_3" GridPane.columnIndex="6" GridPane.rowIndex="5"/>
+
+    <Button fx:id="firstBtn" GridPane.columnIndex="2" GridPane.rowIndex="6" disable="true" text="First"
+            onAction="#first"/>
+    <Button fx:id="prevBtn" GridPane.columnIndex="3" GridPane.rowIndex="6" disable="true" text="Prev" onAction="#prev"/>
+    <Button fx:id="nextBtn" GridPane.columnIndex="4" GridPane.rowIndex="6" disable="true" text="Next" onAction="#next"/>
+    <Button fx:id="lastBtn" GridPane.columnIndex="5" GridPane.rowIndex="6" disable="true" text="Last" onAction="#last"/>
+
+    <ScrollPane GridPane.columnIndex="2" GridPane.rowIndex="7" GridPane.columnSpan="4">
+        <Text fx:id="dialogText" wrappingWidth="400" />
+    </ScrollPane>
+
+</GridPane>
