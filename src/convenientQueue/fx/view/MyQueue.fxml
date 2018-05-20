@@ -3,49 +3,50 @@
 <?import javafx.scene.layout.*?>
 
 <GridPane fx:id="gridPane" alignment="CENTER" xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="convenientQueue.fx.controller.MyQueueController"
-            prefHeight="400.0" prefWidth="600.0">
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="convenientQueue.fx.controller.MyQueueController"
+          prefHeight="400.0" prefWidth="600.0">
 
     <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
-        <Button onAction="#home" text="Home" />
+        <Button onAction="#home" text="Home"/>
     </HBox>
 
     <HBox alignment="bottom_left" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
-        <Button fx:id="editBtn" onAction="#edit" text="Edit" />
+        <Button fx:id="editBtn" onAction="#edit" text="Edit"/>
     </HBox>
 
-    <Label text="Name" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-    <Label text="Surname" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-    <Label text="Specialization" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-    <Label text="Visit time" GridPane.columnIndex="5" GridPane.rowIndex="1" />
-    <Label text="Is active" GridPane.columnIndex="6" GridPane.rowIndex="1" />
+    <Label text="Name" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <Label text="Surname" GridPane.columnIndex="3" GridPane.rowIndex="1"/>
+    <Label text="Specialization" GridPane.columnIndex="4" GridPane.rowIndex="1"/>
+    <Label text="Visit time" GridPane.columnIndex="5" GridPane.rowIndex="1"/>
+    <Label text="Delete" GridPane.columnIndex="6" GridPane.rowIndex="1"/>
 
-    <Label fx:id="name_0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    <Label fx:id="surname_0" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-    <Label fx:id="specialzation_0" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-    <Label fx:id="visit_0" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-    <CheckBox fx:id="ckeckbox_0" GridPane.columnIndex="6" GridPane.rowIndex="2" />
+    <Label fx:id="name_0" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <Label fx:id="surname_0" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <Label fx:id="specialzation_0" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+    <Label fx:id="visit_0" GridPane.columnIndex="5" GridPane.rowIndex="2"/>
+    <CheckBox fx:id="ckeckbox_0" GridPane.columnIndex="6" GridPane.rowIndex="2"/>
 
-    <Label fx:id="name_1" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-    <Label fx:id="surname_1" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-    <Label fx:id="specialzation_1" GridPane.columnIndex="4" GridPane.rowIndex="3" />
-    <Label fx:id="visit_1" GridPane.columnIndex="5" GridPane.rowIndex="3" />
-    <CheckBox fx:id="ckeckbox_1" GridPane.columnIndex="6" GridPane.rowIndex="3" />
+    <Label fx:id="name_1" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <Label fx:id="surname_1" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <Label fx:id="specialzation_1" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+    <Label fx:id="visit_1" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="ckeckbox_1" GridPane.columnIndex="6" GridPane.rowIndex="3"/>
 
-    <Label fx:id="name_2" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-    <Label fx:id="surname_2" GridPane.columnIndex="3" GridPane.rowIndex="4" />
-    <Label fx:id="specialzation_2" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-    <Label fx:id="visit_2" GridPane.columnIndex="5" GridPane.rowIndex="4" />
-    <CheckBox fx:id="ckeckbox_2" GridPane.columnIndex="6" GridPane.rowIndex="4" />
+    <Label fx:id="name_2" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+    <Label fx:id="surname_2" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <Label fx:id="specialzation_2" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <Label fx:id="visit_2" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+    <CheckBox fx:id="ckeckbox_2" GridPane.columnIndex="6" GridPane.rowIndex="4"/>
 
-    <Label fx:id="name_3" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-    <Label fx:id="surname_3" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-    <Label fx:id="specialzation_3" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-    <Label fx:id="visit_3" GridPane.columnIndex="5" GridPane.rowIndex="5" />
-    <CheckBox fx:id="ckeckbox_3" GridPane.columnIndex="6" GridPane.rowIndex="5" />
+    <Label fx:id="name_3" GridPane.columnIndex="2" GridPane.rowIndex="5"/>
+    <Label fx:id="surname_3" GridPane.columnIndex="3" GridPane.rowIndex="5"/>
+    <Label fx:id="specialzation_3" GridPane.columnIndex="4" GridPane.rowIndex="5"/>
+    <Label fx:id="visit_3" GridPane.columnIndex="5" GridPane.rowIndex="5"/>
+    <CheckBox fx:id="ckeckbox_3" GridPane.columnIndex="6" GridPane.rowIndex="5"/>
 
-    <Button fx:id="firstBtn" GridPane.columnIndex="2" GridPane.rowIndex="6" disable="true" text="First" onAction="#first"/>
+    <Button fx:id="firstBtn" GridPane.columnIndex="2" GridPane.rowIndex="6" disable="true" text="First"
+            onAction="#first"/>
     <Button fx:id="prevBtn" GridPane.columnIndex="3" GridPane.rowIndex="6" disable="true" text="Prev" onAction="#prev"/>
     <Button fx:id="nextBtn" GridPane.columnIndex="4" GridPane.rowIndex="6" disable="true" text="Next" onAction="#next"/>
     <Button fx:id="lastBtn" GridPane.columnIndex="5" GridPane.rowIndex="6" disable="true" text="Last" onAction="#last"/>
