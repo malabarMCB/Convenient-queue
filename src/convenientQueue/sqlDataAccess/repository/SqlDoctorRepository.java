@@ -58,7 +58,16 @@ public class SqlDoctorRepository implements IDoctorRepository {
 
     @Override
     public void calculateDoctorVisits(int userId, List<Integer> doctorIds) {
-
+        StringBuilder args = new StringBuilder();
+        args.append(" ");
+        doctorIds.forEach(id-> args.append(" ").append(id).append(" "));
+        args.append(" ");
+        SqlQueryExecutor.executePreparedStatement(connectionString, "CalculateDoctorVisits (?, ?)",
+                (preparedStatement -> {
+                    preparedStatement.setInt(1, userId);
+                    preparedStatement.setString(2, args.toString());
+                    preparedStatement.executeUpdate();
+                }));
     }
 
     @Override

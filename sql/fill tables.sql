@@ -18,11 +18,11 @@ values
 insert into DoctorVisitDetail
 (DoctorId, AvgVisitTime)
 values
-(1, '00:00:05'),
-(2, '00:00:15'),
-(3, '00:00:07'),
-(4, '00:00:30'),
-(5, '00:00:20')
+(1, '00:05:00'),
+(2, '00:15:00'),
+(3, '00:07:00'),
+(4, '00:30:00'),
+(5, '00:20:00')
 
 insert into DoctorVisit
 (UserId, DoctorId, [Time])

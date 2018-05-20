@@ -94,3 +94,65 @@ end
 drop proc GetDoctors
 
 exec GetDoctors 0,4
+go
+
+create proc CalculateDoctorVisits
+	@userId int, @doctorIds nvarchar(max)
+as
+begin
+	declare @doctorId int
+
+	declare @cur cursor 
+	set @cur = cursor for
+	select Id
+	from Doctor
+	where @doctorIds like '% '+cast(Id as nvarchar(max))+' %'
+
+	open @cur
+	fetch next from @cur
+	into @doctorId
+
+	while @@FETCH_STATUS = 0
+	begin
+		declare @userDoctorLastMeet datetime = (cast ((select max([Time]) from DoctorVisit 
+			where DoctorVisit.UserId = @userId and DoctorVisit.DoctorId = @doctorId)as datetime))
+		if (@userDoctorLastMeet is null or @userDoctorLastMeet < getdate())
+		begin
+			declare @visitTime smalldatetime
+			select @visitTime = isnull(max(LastVisit.VisitTime),dateadd(day, 1, getdate()))
+			from
+			(
+				select top 1 (DoctorVisit.Time + cast(DoctorVisitDetail.AvgVisitTime as smalldatetime)) as VisitTime
+				from DoctorVisit
+				join DoctorVisitDetail (nolock) on DoctorVisit.DoctorId = DoctorVisitDetail.DoctorId
+				where DoctorVisit.UserId = @userId
+				order by DoctorVisit.Time desc
+				union		
+				select top 1  (DoctorVisit.Time + cast(DoctorVisitDetail.AvgVisitTime as smalldatetime)) as VisitTime
+				from DoctorVisit
+				join DoctorVisitDetail (nolock) on DoctorVisit.DoctorId = DoctorVisitDetail.DoctorId
+				where DoctorVisit.DoctorId = @doctorId
+				order by DoctorVisit.Time desc
+			) as LastVisit
+
+			insert into DoctorVisit
+			(UserId, DoctorId, [Time])
+			values
+			(@userId, @doctorId, @visitTime)
+		end
+
+		fetch next from @cur
+		into @doctorId
+	end
+
+	close @cur
+	deallocate @cur
+end
+
+drop proc CalculateDoctorVisits
+
+delete from DoctorVisit
+select * from DoctorVisit
+exec CalculateDoctorVisits 1, ' 1 2 3 '
+exec CalculateDoctorVisits 2, ' 3 '
+go
